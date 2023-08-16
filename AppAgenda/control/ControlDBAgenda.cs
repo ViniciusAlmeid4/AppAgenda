@@ -11,7 +11,7 @@ namespace AppAgenda.control
         SQLiteConnection conn;
         public string StatusMessage { get; set; }
 
-        public ServiceDBAgenda(string dbPath)
+        public ControlDBAgenda(string dbPath)
         {
             if (dbPath == "") dbPath = App.DbPath;
             conn = new SQLiteConnection(dbPath);

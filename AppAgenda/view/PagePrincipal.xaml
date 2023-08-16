@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppAgenda.view.PagePrincipal">
+             x:Class="AppAgenda.view.PagePrincipal" Background="#fcead4" IsPresented="True">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout Margin="10">
@@ -30,7 +30,7 @@
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
         <ContentPage Title="Página Principal">
-            <Label x:Name="testeDb" Text="Alo Mundo!"/>
+            <Label x:Name="testeDb" Text="Sei nem pra q serve, mas tá aq"/>
         </ContentPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>
