@@ -1,12 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppAgenda.view.PageCadastro">
+             x:Class="AppAgenda.view.PageCadastro" Title="Cadastro de número">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="txtCodigo" IsVisible="False" IsEnabled="False"/>
+            <Entry x:Name="txtNome" Keyboard="Plain" Placeholder="Nome da pessoa:"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Contato favorito:" FontSize="Medium"/>
+                <Switch x:Name="swFavoritos" HorizontalOptions="Start"/>
+            </StackLayout>
+            <Editor x:Name="txtNumero" Keyboard="Plain" Placeholder="Número" VerticalOptions="FillAndExpand" Margin="20"/>
+            <StackLayout Orientation="Horizontal" Margin="20,0,20,20">
+                <Button x:Name="btSalvar" Text="Inserir" Clicked="btSalvar_Clicked" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btExcluir" Text="Excluir" Clicked="btExcluir_Clicked" IsVisible="False" HorizontalOptions="FillAndExpand"/>
+                <Button x:Name="btCancelar" Text="Cancelar" HorizontalOptions="FillAndExpand" Clicked="btCancelar_Clicked_1"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
