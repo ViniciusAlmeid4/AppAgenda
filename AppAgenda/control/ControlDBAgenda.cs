@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using AppAgenda.model;
+using SQLitePCL;
 
 namespace AppAgenda.control
 {
@@ -13,8 +14,23 @@ namespace AppAgenda.control
 
         public ControlDBAgenda(string dbPath)
         {
-            if (dbPath == "") dbPath = App.DbPath;
-            conn = new SQLiteConnection(dbPath);
+
+            try
+            {
+                if (dbPath == "") dbPath = App.DbPath;
+                conn = new SQLiteConnection(dbPath);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+            
+            
+
+            
+            
+
             conn.CreateTable<ModelAgenda>();
         }
 

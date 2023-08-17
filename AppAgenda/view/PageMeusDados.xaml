@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppAgenda.view.PageMeusDados" Title="Sobre" Background="#fcead4">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal" Margin="10">
-            <Image Source="logoTelefone.png" Margin="10"/>
-            <StackLayout>
-                <Label Text="AppAgenda" FontSize="Large" FontAttributes="Bold" VerticalOptions="EndAndExpand"/>
-                <Label Text="Desenvolvedor: Vinicius Almeida e Anderson Dias" FontSize="Medium" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Center"/>
-                <Label Text="Maringá - 2023" FontSize="Medium" FontAttributes="Bold" VerticalOptions="StartAndExpand"  HorizontalOptions="StartAndExpand" />
+        <StackLayout Orientation="Vertical" Margin="10">
+            <Image Source="logoTelefone.png" Margin="10" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" HeightRequest="200" WidthRequest="200"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label Text="AppAgenda" FontSize="Large" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="Desenvolvedor: Vinicius Almeida e Anderson Dias" FontSize="Medium" FontAttributes="Bold"  VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label Text="Maringá - 2023" FontSize="Medium" FontAttributes="Bold" VerticalOptions="StartAndExpand"  HorizontalOptions="StartAndExpand" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

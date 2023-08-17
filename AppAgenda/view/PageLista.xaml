@@ -5,11 +5,11 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Exibir Notas favorita:" FontSize="Medium"/>
+                <Label Text="Exibir Números favoritos:" FontSize="Medium"/>
                 <Switch x:Name="swFavorito" HorizontalOptions="Start" Toggled="swFavorito_Toggled"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Entry x:Name="txtNota" Keyboard="Plain" Placeholder="Título da nota" HorizontalOptions="StartAndExpand"/>
+                <Entry x:Name="txtNota" Keyboard="Plain" Placeholder="Pessoa" HorizontalOptions="StartAndExpand"/>
                 <Button x:Name="btLocalizar" Text="Localizar" Clicked="btLocalizar_Clicked"/>
             </StackLayout>
             <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Red" Margin="15" ItemSelected="ListaNotas_ItemSelected">
@@ -19,7 +19,7 @@
                             <StackLayout>
                                 <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
                                 <Label Text="{Binding Nome,StringFormat='Nome: {0}'}"/>
-                                <!--<Label Text="{Binding Dados,StringFormat='Dados: {0}'}"/>-->
+                                <Label Text="{Binding Celular,StringFormat='Dados: {0}'}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
