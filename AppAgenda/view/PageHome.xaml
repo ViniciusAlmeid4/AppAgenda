@@ -13,19 +13,22 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="15">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
-                                <Label Text="{Binding Nome,StringFormat='Nome: {0}'}" Margin="0,15,0,0"/>
-                                <Label Text="{Binding Celular,StringFormat='Dados: {0}'}" Margin="0,0,0,15"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Refresh" HorizontalOptions="Start" HeightRequest="55" WidthRequest="55" Clicked="Button_Clicked"/>
+                <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="15">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
+                                    <Label Text="{Binding Nome,StringFormat='Nome: {0}'}" Margin="0,15,0,0"/>
+                                    <Label Text="{Binding Celular,StringFormat='Dados: {0}'}" Margin="0,0,0,15"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
             <Image Source="esqueci1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
             <Image x:Name="imgInserir" Source="inserir" Grid.Row="1" Grid.Column="0">
                 <Image.GestureRecognizers>

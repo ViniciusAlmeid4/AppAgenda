@@ -40,5 +40,10 @@ namespace AppAgenda.view
             ControlDBAgenda dbAgenda = new ControlDBAgenda(App.DbPath);
             ListaNotas.ItemsSource = dbAgenda.Localizar(nome);
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Refresh();
+        }
     }
 }
