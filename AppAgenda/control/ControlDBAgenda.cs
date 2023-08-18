@@ -14,7 +14,6 @@ namespace AppAgenda.control
 
         public ControlDBAgenda(string dbPath)
         {
-
             try
             {
                 if (dbPath == "") dbPath = App.DbPath;
@@ -25,12 +24,6 @@ namespace AppAgenda.control
 
                 throw new Exception(ex.Message);
             }
-            
-            
-
-            
-            
-
             conn.CreateTable<ModelAgenda>();
         }
 
@@ -45,7 +38,7 @@ namespace AppAgenda.control
                 int result = conn.Insert(agenda);
                 if (result != 0)
                 {
-                    this.StatusMessage = string.Format("{0} registro adicionado:[Agenda: {1}]", result, agenda.Nome);
+                    this.StatusMessage = string.Format("{0} registro adicionado: {1}", result, agenda.Nome);
                 }
                 else
                 {
@@ -148,6 +141,84 @@ namespace AppAgenda.control
                 throw new Exception(string.Format("Erro: {0}", ex.Message));
             }
             return m;
+        }
+
+        public void InsereMeusDados(ModelMeusDados md)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(md.Nome))
+                    throw new Exception("Nome agenda não informado!");
+                if (string.IsNullOrEmpty(md.Celular))
+                    throw new Exception("Celular da agenda não informado!");
+                int result = conn.Insert(md);
+                if (result != 0)
+                {
+                    this.StatusMessage = string.Format("{0} registro adicionado: {1}", result, md.Nome);
+                }
+                else
+                {
+                    this.StatusMessage = string.Format("Registro não foi adicionado!");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void AlteraMeusDados(ModelMeusDados md)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(md.Nome))
+                    throw new Exception("Nome agenda não informado!");
+                if (string.IsNullOrEmpty(md.Celular))
+                    throw new Exception("Celular da agenda não informado!");
+                int result = conn.Update(md);
+                StatusMessage = string.Format("{0} registro alterado!", result);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Erro: {0}", ex.Message));
+            }
+        }
+
+        public bool VerificaMeusDados()
+        {
+            ModelMeusDados m = new ModelMeusDados();
+            try
+            {
+                m = conn.Table<ModelMeusDados>().First(n => n.Id == 1);
+                StatusMessage = "Pessoa encontrada!";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(string.Format("Erro: {0}", ex.Message));
+            }
+            if (m.Id == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public List<ModelMeusDados> ListarMeusDados()
+        {
+            List<ModelMeusDados> lista = new List<ModelMeusDados>();
+            try
+            {
+                lista = conn.Table<ModelMeusDados>().ToList();
+                this.StatusMessage = "Listagem dos Meus Dados";
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return lista;
         }
     }
 }

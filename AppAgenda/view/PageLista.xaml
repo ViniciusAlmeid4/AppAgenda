@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppAgenda.view.PageLista" Title="Agenda">
+             x:Class="AppAgenda.view.PageLista" Title="Agenda" BackgroundColor="#e9f5f2">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -12,14 +12,14 @@
                 <Entry x:Name="txtNota" Keyboard="Plain" Placeholder="Pessoa" HorizontalOptions="StartAndExpand"/>
                 <Button x:Name="btLocalizar" Text="Localizar" Clicked="btLocalizar_Clicked"/>
             </StackLayout>
-            <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Red" Margin="15" ItemSelected="ListaNotas_ItemSelected">
+            <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="15" ItemSelected="ListaNotas_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
                                 <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
-                                <Label Text="{Binding Nome,StringFormat='Nome: {0}'}"/>
-                                <Label Text="{Binding Celular,StringFormat='Dados: {0}'}"/>
+                                <Label Text="{Binding Nome,StringFormat='Nome: {0}'}" Margin="0,16,0,0"/>
+                                <Label Text="{Binding Celular,StringFormat='Dados: {0}'}" Margin="0,0,0,15"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

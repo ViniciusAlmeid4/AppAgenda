@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppAgenda.view.PageHome" Title="Listagem">
+             x:Class="AppAgenda.view.PageHome" Title="Listagem" BackgroundColor="#e9f5f2">
     <ContentPage.Content>
         <Grid Margin="20">
             <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="Auto"/>
@@ -13,35 +14,34 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Refresh" HorizontalOptions="Start" HeightRequest="55" WidthRequest="55" Clicked="Button_Clicked"/>
-                <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="15">
+            <StackLayout Orientation="Vertical">
+                <Button Text="Refresh" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Clicked="Button_Clicked"/>
+                <ListView x:Name="ListaNotas" HasUnevenRows="True" SeparatorColor="Black" Margin="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout>
                                     <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
                                     <Label Text="{Binding Nome,StringFormat='Nome: {0}'}" Margin="0,15,0,0"/>
-                                    <Label Text="{Binding Celular,StringFormat='Dados: {0}'}" Margin="0,0,0,15"/>
+                                    <Label Text="{Binding Celular,StringFormat='Número: {0}'}" Margin="0,0,0,15"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <Image Source="esqueci1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Image x:Name="imgInserir" Source="inserir" Grid.Row="1" Grid.Column="0">
+            <Image x:Name="imgInserir" Source="inserir" Grid.Row="2" Grid.Column="0">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Image x:Name="imaLocalizar" Source="localizar" Grid.Row="1" Grid.Column="1">
+            <Image x:Name="imaLocalizar" Source="localizar" Grid.Row="2" Grid.Column="1">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" NumberOfTapsRequired="1"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Label Text="Cadastrar" Grid.Row="2" Grid.Column="0" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
-            <Label Text="Localizar" Grid.Row="2" Grid.Column="1" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="Cadastrar" Grid.Row="3" Grid.Column="0" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="Localizar" Grid.Row="3" Grid.Column="1" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

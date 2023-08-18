@@ -1,26 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppAgenda.view.PagePrincipal" Background="#fcead4" IsPresented="True">
+             x:Class="AppAgenda.view.PagePrincipal" IsPresented="True">
     <MasterDetailPage.Master>
-        <ContentPage Title="Menu">
-            <StackLayout Margin="10">
-                <Image Source="esqueci2" HorizontalOptions="Center"/>
-                <Label Text="Agenda" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,50"/>
+        <ContentPage Title="Menu"  BackgroundColor="WhiteSmoke">
+            <StackLayout Margin="10" >
+                <Image Source="gatoJoinha.png" HorizontalOptions="Center" HeightRequest="220" WidthRequest="220"/>
+                <Label Text="Agenda" FontSize="Large" HorizontalOptions="Center" Margin="0,50,0,20" FontAttributes="Bold" TextColor="Black"/>
                 <StackLayout  VerticalOptions="CenterAndExpand">
-                    <StackLayout Orientation="Horizontal" Margin="30">
+                    <StackLayout Orientation="Horizontal" Margin="15">
                         <Image Source="listaTelefone" HeightRequest="50" WidthRequest="50"/>
                         <Button x:Name="btHome" Text="Home" HorizontalOptions="FillAndExpand" Clicked="btHome_Clicked"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="30">
+                    <StackLayout Orientation="Horizontal" Margin="15">
                         <Image Source="inserir"/>
                         <Button x:Name="btCadastrar" Text="Cadastrar" HorizontalOptions="FillAndExpand" Clicked="btCadastrar_Clicked"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="30">
+                    <StackLayout Orientation="Horizontal" Margin="15">
                         <Image Source="localizar"/>
                         <Button x:Name="btListar" Text="Localizar" HorizontalOptions="FillAndExpand" Clicked="btListar_Clicked"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" Margin="30">
+                    <StackLayout Orientation="Horizontal" Margin="15">
                         <Image Source="info"/>
                         <Button x:Name="btSobre" Text="Sobre" HorizontalOptions="FillAndExpand" Clicked="btSobre_Clicked"/>
                     </StackLayout>

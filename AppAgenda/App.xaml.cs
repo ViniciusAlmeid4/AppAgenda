@@ -13,7 +13,7 @@ namespace AppAgenda
         {
             InitializeComponent();
 
-            MainPage = new PagePrincipal();
+            MainPage = new PageMeusDados();
         }
 
         public App(string dbPath, string dbName)
