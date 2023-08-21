@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AppAgenda": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

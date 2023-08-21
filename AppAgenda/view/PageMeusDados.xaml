@@ -14,11 +14,23 @@
                         </Image.GestureRecognizers>
                     </Image>
                     -->
-                    <Entry x:Name="txtMeuNome" Keyboard="Plain" Placeholder="Meu nome: "/>
-                    <Entry x:Name="txtMeuNumero" Keyboard="Plain" Placeholder="Meu número: "/>
-
-                    <Label x:Name="txtMeuNomeCadastrado" Text=""/>
-                    <Label x:Name="txtMeucelular" Text=""/>
+                    <StackLayout Orientation="Vertical">
+                        <Entry x:Name="txtMeuNome" Keyboard="Plain" Placeholder="Meu nome: "/>
+                        <Entry x:Name="txtMeuNumero" Keyboard="Plain" Placeholder="Meu número: "/>                        
+                        <ListView x:Name="ListaNotas" HasUnevenRows="True" Margin="15" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <!--<Label Text="{Binding Id,StringFormat='Código: {0}'}"/>-->
+                                            <Label Text="{Binding Nome,StringFormat='Nome: {0}'}" Margin="0,15,0,0" FontSize="Large"/>
+                                            <Label Text="{Binding Celular,StringFormat='Número: {0}'}" Margin="0,0,0,15" FontSize="Large"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
 
                     <StackLayout Orientation="Vertical">
                         <Image Source="inserir" IsVisible="True">
